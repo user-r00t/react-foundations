@@ -69,13 +69,13 @@
     const booksList = React.createElement(
         'ul', 
         null, 
-        books.map((p, i) => React.createElement("li", {key: i}, p))
+        books.map((b, i) => React.createElement("li", {key: i}, b.toString()))
     )
     
     const filmsList = React.createElement(
         'ul', 
         null, 
-        films.map((s, i) => React.createElement("li", {key: i}, s))
+        films.map((f, i) => React.createElement("li", {key: i}, f.toString()))
     )
     
     const retailer = React.createElement('div', null,
