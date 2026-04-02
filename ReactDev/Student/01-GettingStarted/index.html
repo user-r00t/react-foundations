@@ -12,6 +12,15 @@
 </head>
 <body>
 
+<script type="importmap">
+{
+    "imports": {
+        "react": "https://esm.sh/react?dev",
+        "react-dom/client": "https://esm.sh/react-dom/client?dev"
+    }
+}
+</script>
+
 <script>
 
     class Book {
@@ -49,6 +58,37 @@
         new Film('Love Actually', 'RomCom', ' Hugh Grant playing Hugh Grant')
     ]
     
+</script>
+
+<script type="module">
+    import React from "react"
+    import { createRoot } from "react-dom/client"
+    
+  
+
+    const booksList = React.createElement(
+        'ul', 
+        null, 
+        books.map((p, i) => React.createElement("li", {key: i}, p))
+    )
+    
+    const filmsList = React.createElement(
+        'ul', 
+        null, 
+        films.map((s, i) => React.createElement("li", {key: i}, s))
+    )
+    
+    const retailer = React.createElement('div', null,
+        React.createElement('h1', null, 'My Library'),
+        React.createElement('h1', null, 'Books'),
+        booksList,
+        React.createElement('h1', null, 'Films'),
+        filmsList
+    )
+    
+    const root = createRoot(document.getElementById('root'))
+    root.render(retailer)
+
 </script>
 
 </body>
